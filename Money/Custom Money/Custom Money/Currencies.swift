@@ -8,43 +8,22 @@
 
 import Foundation
 import Money
+import MoneyFX
 
 protocol MyCustomCurrencyType: CustomCurrencyType { }
 
 extension Currency {
 
     final class Heart: MyCustomCurrencyType {
-
         static let code: String = "HEARTS"
         static let scale: Int  = 0
-        static let formatter: NSNumberFormatter = {
-            let fmtr = NSNumberFormatter()
-            fmtr.numberStyle = .CurrencyStyle
-            fmtr.maximumFractionDigits = Currency.Heart.scale
-            fmtr.currencySymbol = "❤️"
-            fmtr.internationalCurrencySymbol = Currency.Heart.code
-            let locale = NSLocale.currentLocale()
-            fmtr.currencyGroupingSeparator = locale.currencyGroupingSeparator
-            fmtr.currencyDecimalSeparator = locale.currencyDecimalSeparator
-            return fmtr
-        }()
+        static let symbol: String? = "❤️"
     }
 
     final class Bee: MyCustomCurrencyType {
-
         static let code: String = "BEES"
         static let scale: Int  = 0
-        static let formatter: NSNumberFormatter = {
-            let fmtr = NSNumberFormatter()
-            fmtr.numberStyle = .CurrencyStyle
-            fmtr.maximumFractionDigits = Currency.Bee.scale
-            fmtr.currencySymbol = "🐝"
-            fmtr.internationalCurrencySymbol = Currency.Bee.code
-            let locale = NSLocale.currentLocale()
-            fmtr.currencyGroupingSeparator = locale.currencyGroupingSeparator
-            fmtr.currencyDecimalSeparator = locale.currencyDecimalSeparator
-            return fmtr
-        }()
+        static let symbol: String? = "🐝"
     }
 }
 
@@ -52,7 +31,7 @@ typealias Hearts = _Money<Currency.Heart>
 typealias Bees = _Money<Currency.Bee>
 
 
-/** - This would require the FX module
+/** - This requires the FX module **/
 
 class BankRates {
 
@@ -96,5 +75,3 @@ class Bank<B: MoneyType, C: MoneyType where
     }
 }
 
-
-*/
