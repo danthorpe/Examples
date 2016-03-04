@@ -1,0 +1,7 @@
+platform :ios, 8.4
+use_frameworks!
+
+target 'Custom Money' do
+  pod 'MoneyFX'
+end
+

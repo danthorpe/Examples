@@ -1,0 +1,22 @@
+PODS:
+  - Money (1.6.0):
+    - ValueCoding
+  - MoneyFX (1.0.0):
+    - Money
+    - Result
+    - SwiftyJSON
+  - Result (1.0.2)
+  - SwiftyJSON (2.3.2)
+  - ValueCoding (1.2.0)
+
+DEPENDENCIES:
+  - MoneyFX
+
+SPEC CHECKSUMS:
+  Money: aa741db5fe9c7a77f870e4a59938fe8342067734
+  MoneyFX: 0a06afffeb6c75c8b427176714be82e1ea52cdfa
+  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  ValueCoding: e2f7d8fee288debd762b655a8e0ba933985a6b57
+
+COCOAPODS: 0.39.0
