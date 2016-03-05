@@ -1,27 +1,34 @@
 PODS:
-  - Operations/+AddressBook (2.6.0):
+  - Operations/+AddressBook (2.6.1):
     - Operations/Standard
-  - Operations/Standard (2.6.0)
+  - Operations/Standard (2.6.1)
   - PureLayout (3.0.1)
-  - SwiftyBeaver (0.3.5)
+  - SwiftyBeaver (0.4.0)
   - TaylorSource (2.0.0):
     - TaylorSource/Base (= 2.0.0)
   - TaylorSource/Base (2.0.0)
 
 DEPENDENCIES:
-  - Operations/+AddressBook (from `../../`)
+  - Operations/+AddressBook (from `https://github.com/danthorpe/Operations`, branch
+    `development`)
   - PureLayout
   - SwiftyBeaver
   - TaylorSource (~> 2)
 
 EXTERNAL SOURCES:
   Operations:
-    :path: "../../"
+    :branch: development
+    :git: https://github.com/danthorpe/Operations
+
+CHECKOUT OPTIONS:
+  Operations:
+    :commit: 1c25f0eb6e7d7493310b7ece0f094b3816a2a01f
+    :git: https://github.com/danthorpe/Operations
 
 SPEC CHECKSUMS:
-  Operations: 18114beb1805651d218ab077f549aea92e757493
+  Operations: 4a768074b11a39c7fd7765fcb1d61446a74ffff7
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  SwiftyBeaver: 2f90c3847586073616566dae043ad99b16866c4e
+  SwiftyBeaver: 61bfa3c26109ab877ef5f8bec8a3e37c4f3bb631
   TaylorSource: 86484ba9cf9374d51d4c17db1ad21ee5acba1277
 
 COCOAPODS: 0.39.0

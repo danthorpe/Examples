@@ -6,4 +6,4 @@ use_frameworks!
 pod 'SwiftyBeaver'
 pod 'PureLayout'
 pod 'TaylorSource', '~> 2'
-pod 'Operations/+AddressBook', :path => '../../'
+pod 'Operations/+AddressBook', :git => 'https://github.com/danthorpe/Operations', :branch => 'development'
