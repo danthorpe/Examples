@@ -75,13 +75,6 @@ struct CitiesDatasource: DatasourceProviderType {
             return .None
         }
     }
-
-    func addCity(city: City, toState state: State) -> NSOperation {
-        return readWriteConnection.writeBlockOperation { transaction in
-            transaction.write(state)
-            transaction.write(city)
-        }
-    }
 }
 
 class USCitiesViewController: UITableViewController {
