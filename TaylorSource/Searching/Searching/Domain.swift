@@ -29,10 +29,17 @@ class CitySearch: YapDB.Search {
 
     static let name = "Search for Cities by Name"
 
+    static let handler: YapDB.SearchResults.Handler = {
+        return .ByObject({ dictionary, collection, key, object in
+            if collection == City.collection, let city = City.decode(object) {
+                dictionary.setObject(city.name, forKey: "name")
+            }
+        })
+    }()
+
     init(db: YapDatabase) {
-        // Note the * - this is very importantK
-        let query: Query = { "name:\($0)*"}
-        super.init(db: db, views: [City.searchResults], query: query)
+        // Note the * - this is very important
+        super.init(db: db, views: [City.searchResults], query: { "name:\($0)*" })
     }
 }
 
@@ -77,16 +84,7 @@ extension City {
     }()
 
     static let searchResults: YapDB.Fetch = {
-
-        let handler: YapDB.SearchResults.Handler = .ByObject({ dictionary, collection, key, object in
-            if collection == City.collection, let city = City.decode(object) {
-                dictionary.setObject(city.name, forKey: "name")
-            }
-        })
-
-        let results = YapDB.SearchResults(name: "Cities by Name Search Results", parent: viewByState, search: CitySearch.name, columnNames: ["name"], handler: handler, collections: [collection])
-
-        return .Search(results)
+        return .Search(YapDB.SearchResults(name: "Cities by Name Search Results", parent: viewByState, search: CitySearch.name, columnNames: ["name"], handler: CitySearch.handler, collections: [collection]))
     }()
 
     static func viewCities(byState: Bool = true, abovePopulationThreshold threshold: Int = 0) -> YapDB.Fetch {
