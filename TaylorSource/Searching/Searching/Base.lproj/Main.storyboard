@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qtG-2k-2vg">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Some US Cities-->
+        <scene sceneID="LfX-Me-CFi">
+            <objects>
+                <tableViewController id="MKS-Ez-T1K" customClass="SearchableUSCitiesViewController" customModule="Searching" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vGW-NS-bHm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="MKS-Ez-T1K" id="7lO-3q-nMg"/>
+                            <outlet property="delegate" destination="MKS-Ez-T1K" id="YOT-bN-yTC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Some US Cities" id="eDH-Q2-8Hd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ry6-b6-Vcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1310" y="385"/>
+        </scene>
+        <!--Some US Cities-->
+        <scene sceneID="N9X-EB-ZOn">
+            <objects>
+                <navigationController title="Some US Cities" automaticallyAdjustsScrollViewInsets="NO" id="qtG-2k-2vg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Jw-Ab-JBw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MKS-Ez-T1K" kind="relationship" relationship="rootViewController" id="Fp3-7E-r6S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5R5-eZ-cXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="498" y="385"/>
+        </scene>
+    </scenes>
+</document>
