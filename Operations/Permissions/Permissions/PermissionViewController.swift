@@ -69,9 +69,18 @@ class PermissionViewController: UIViewController {
         }
     }
     
-    enum Action: Selector {
-        case RequestPermission = "requestPermissionAction:"
-        case PerformOperation = "performOperationAction:"
+    enum Action {
+        case RequestPermission
+        case PerformOperation
+
+        var selector: Selector {
+            switch self {
+            case .RequestPermission:
+                return #selector(PermissionViewController.requestPermissionAction(_:))
+            case .PerformOperation:
+                return #selector(PermissionViewController.performOperationAction(_:))
+            }
+        }
     }
     
     enum State: Int {
@@ -150,12 +159,12 @@ class PermissionViewController: UIViewController {
         permissionNotDetermined.informationLabel.text = "We haven't yet asked permission to access your Address Book."
         permissionNotDetermined.instructionLabel.text = "Tap the button below to ask for permissions."
         permissionNotDetermined.button.setTitle("Start", forState: .Normal)
-        permissionNotDetermined.button.addTarget(self, action: Action.RequestPermission.rawValue, forControlEvents: .TouchUpInside)
+        permissionNotDetermined.button.addTarget(self, action: Action.RequestPermission.selector, forControlEvents: .TouchUpInside)
         
         permissionGranted.informationLabel.text = "Permissions was granted. Yay!"
         permissionGranted.instructionLabel.text = "We can now perform an operation as we've been granted the required permissions."
         permissionGranted.button.setTitle("Run", forState: .Normal)
-        permissionGranted.button.addTarget(self, action: Action.PerformOperation.rawValue, forControlEvents: .TouchUpInside)
+        permissionGranted.button.addTarget(self, action: Action.PerformOperation.selector, forControlEvents: .TouchUpInside)
         
         permissionDenied.informationLabel.text = "Permission was denied or restricted. Oh Nos!"
         permissionDenied.instructionLabel.hidden = true
