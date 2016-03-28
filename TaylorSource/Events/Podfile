@@ -1,13 +1,11 @@
-source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, "8.0"
 
 inhibit_all_warnings!
 use_frameworks!
 
-platform :ios, "8.0"
-
 target 'Datasources' do
 
   pod 'DateTools'
-  pod 'TaylorSource/YapDatabase', :path => '../../'
+  pod 'TaylorSource/YapDatabase'
 
 end
