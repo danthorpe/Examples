@@ -7,15 +7,15 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
-  - Operations (2.7.1):
-    - Operations/Standard (= 2.7.1)
-  - Operations/Standard (2.7.1)
+  - Operations (2.9.0):
+    - Operations/Standard (= 2.9.0)
+  - Operations/Standard (2.9.0)
   - TaylorSource/Base (2.0.0)
   - TaylorSource/YapDatabase (2.0.0):
     - TaylorSource/Base
     - YapDatabase (~> 2.7)
     - YapDatabaseExtensions (~> 2)
-  - ValueCoding (1.2.0)
+  - ValueCoding (1.3.0)
   - YapDatabase (2.8.3):
     - YapDatabase/Standard (= 2.8.3)
   - YapDatabase/Standard (2.8.3):
@@ -59,32 +59,33 @@ PODS:
     - YapDatabase/Standard/Core
   - YapDatabase/Standard/Extensions/Views (2.8.3):
     - YapDatabase/Standard/Core
-  - YapDatabaseExtensions (2.3.0):
-    - ValueCoding (~> 1)
+  - YapDatabaseExtensions (2.5.0):
+    - ValueCoding (~> 1.3)
     - YapDatabase (~> 2)
-    - YapDatabaseExtensions/Persitable (= 2.3.0)
-  - YapDatabaseExtensions/Core (2.3.0):
-    - ValueCoding (~> 1)
+    - YapDatabaseExtensions/Persitable (= 2.5.0)
+  - YapDatabaseExtensions/Core (2.5.0):
+    - ValueCoding (~> 1.3)
     - YapDatabase (~> 2)
-  - YapDatabaseExtensions/Functional (2.3.0):
-    - ValueCoding (~> 1)
+  - YapDatabaseExtensions/Functional (2.5.0):
+    - ValueCoding (~> 1.3)
     - YapDatabase (~> 2)
     - YapDatabaseExtensions/Core
-  - YapDatabaseExtensions/Persitable (2.3.0):
-    - ValueCoding (~> 1)
+  - YapDatabaseExtensions/Persitable (2.5.0):
+    - ValueCoding (~> 1.3)
     - YapDatabase (~> 2)
     - YapDatabaseExtensions/Functional
 
 DEPENDENCIES:
   - Operations
   - TaylorSource/YapDatabase
+  - YapDatabaseExtensions (~> 2.5)
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
-  Operations: d6a9f6670ae307b2860057ab0ce143bf61424ce7
+  Operations: 62f6d7942ed37d06476426fb275233b21a48617c
   TaylorSource: 86484ba9cf9374d51d4c17db1ad21ee5acba1277
-  ValueCoding: e2f7d8fee288debd762b655a8e0ba933985a6b57
+  ValueCoding: 9c9ed6ecdb9cc37f1a8d3fd9f5756953caf5a869
   YapDatabase: 15b6867a07ff30eac3af28794cd2262b4d0ca4ca
-  YapDatabaseExtensions: 798a3469721ee9548a7dfa2dcc85bebb6a50f532
+  YapDatabaseExtensions: d050d588bd13f98cd309632c80db77771bf0dc78
 
 COCOAPODS: 0.39.0

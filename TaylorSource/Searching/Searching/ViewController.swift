@@ -56,17 +56,15 @@ struct CitiesDatasource: DatasourceProviderType {
     let editor = NoEditor()
     var datasource: Datasource
 
-    init(db: YapDatabase, view: Factory.ViewType, kind: Kind = .All, threshold: Int = 0) {
-        self.kind = kind
-        self.formatter = NSNumberFormatter()
+    init(db: YapDatabase, view: Factory.ViewType, kind k: Kind = .All, threshold: Int = 0) {
+        kind = k
+        formatter = NSNumberFormatter()
         formatter.numberStyle = .DecimalStyle
         formatter.perMillSymbol = ","
         formatter.allowsFloats = false
+        readWriteConnection = db.newConnection()
 
-        self.readWriteConnection = db.newConnection()
-
-        self.datasource = Datasource(id: "cities datasource", database: db, factory: Factory(), processChanges: view.processChanges, configuration: kind.configurationWithThreshold(threshold))
-
+        datasource = Datasource(id: "cities datasource", database: db, factory: Factory(), processChanges: view.processChanges, configuration: kind.configurationWithThreshold(threshold))
         datasource.factory.registerCell(.ClassWithIdentifier(CityCell.self, "cell"), inView: view, configuration: CityCell.configuration(formatter))
         datasource.factory.registerHeaderText { index in
             if let state: State = index.transaction.readByKey(index.group) {
@@ -126,7 +124,6 @@ class SearchableUSCitiesViewController: USCitiesViewController {
         let reloadTableView = configureTableView(tableView, withDatasource: wrapper.tableViewDataSource)
         reloadTableView.addDependency(loadUSCities)
         queue.addOperations(loadUSCities, reloadTableView)
-
     }
 
     func configureSearchController() {
@@ -229,6 +226,7 @@ class LoadUSCitiesOperation: GroupOperation {
                     $0.write(cities)
                 }
             }
+
             finish()
         }
     }

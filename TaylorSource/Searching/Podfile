@@ -1,4 +1,5 @@
 use_frameworks!
 
 pod 'Operations'
+pod 'YapDatabaseExtensions', '~> 2.5'
 pod 'TaylorSource/YapDatabase'
