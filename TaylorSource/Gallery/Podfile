@@ -7,4 +7,4 @@ platform :ios, "8.0"
 
 pod 'FlickrKit', '~> 1.0.5'
 pod 'HanekeSwift'
-pod 'TaylorSource/YapDatabase', :path => '../../'
+pod 'TaylorSource/YapDatabase'
