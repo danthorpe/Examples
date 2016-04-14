@@ -16,6 +16,7 @@
 		65343F801B6663EF0022968E /* PermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65343F7F1B6663EF0022968E /* PermissionsTests.swift */; };
 		6539CCB41B680C9B00A16D7B /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539CCB31B680C9B00A16D7B /* LocationViewController.swift */; };
 		6539CCB61B680F0100A16D7B /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539CCB51B680F0100A16D7B /* PermissionViewController.swift */; };
+		653D5A341CC049B2009F3D14 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5A331CC049B2009F3D14 /* PhotosViewController.swift */; };
 		65546D821BF237C90010F6EE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65546D811BF237C90010F6EE /* MapKit.framework */; };
 		65546D841BF238870010F6EE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65546D831BF238870010F6EE /* CoreLocation.framework */; };
 		65719F711B7119960012A775 /* UserNotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65719F701B7119960012A775 /* UserNotificationSettingsViewController.swift */; };
@@ -47,6 +48,7 @@
 		65343F7F1B6663EF0022968E /* PermissionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsTests.swift; sourceTree = "<group>"; };
 		6539CCB31B680C9B00A16D7B /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		6539CCB51B680F0100A16D7B /* PermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		653D5A331CC049B2009F3D14 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		65546D811BF237C90010F6EE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		65546D831BF238870010F6EE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65719F701B7119960012A775 /* UserNotificationSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				65AF540D1B66F05E00562306 /* AddressBookViewController.swift */,
 				6539CCB31B680C9B00A16D7B /* LocationViewController.swift */,
 				6539CCB51B680F0100A16D7B /* PermissionViewController.swift */,
+				653D5A331CC049B2009F3D14 /* PhotosViewController.swift */,
 				65719F701B7119960012A775 /* UserNotificationSettingsViewController.swift */,
 			);
 			name = "View Controllers";
@@ -325,6 +328,7 @@
 				65343F6C1B6663EF0022968E /* MainController.swift in Sources */,
 				65343F6A1B6663EF0022968E /* AppDelegate.swift in Sources */,
 				65719F711B7119960012A775 /* UserNotificationSettingsViewController.swift in Sources */,
+				653D5A341CC049B2009F3D14 /* PhotosViewController.swift in Sources */,
 				6539CCB41B680C9B00A16D7B /* LocationViewController.swift in Sources */,
 				6539CCB61B680F0100A16D7B /* PermissionViewController.swift in Sources */,
 			);

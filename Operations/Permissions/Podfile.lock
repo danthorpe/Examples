@@ -1,6 +1,8 @@
 PODS:
   - Operations/+AddressBook (2.9.0):
     - Operations/Standard
+  - Operations/+Photos (2.9.0):
+    - Operations/Standard
   - Operations/Standard (2.9.0)
   - PureLayout (3.0.1)
   - SwiftyBeaver (0.4.2)
@@ -9,7 +11,8 @@ PODS:
   - TaylorSource/Base (2.0.0)
 
 DEPENDENCIES:
-  - Operations/+AddressBook (~> 2)
+  - Operations/+AddressBook
+  - Operations/+Photos
   - PureLayout
   - SwiftyBeaver
   - TaylorSource (~> 2)
