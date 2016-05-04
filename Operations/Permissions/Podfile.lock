@@ -1,23 +1,26 @@
 PODS:
-  - Operations/+AddressBook (2.9.0):
+  - Operations/+AddressBook (2.10.0):
     - Operations/Standard
-  - Operations/Standard (2.9.0)
+  - Operations/+Photos (2.10.0):
+    - Operations/Standard
+  - Operations/Standard (2.10.0)
   - PureLayout (3.0.1)
-  - SwiftyBeaver (0.4.2)
+  - SwiftyBeaver (0.5.2)
   - TaylorSource (2.0.0):
     - TaylorSource/Base (= 2.0.0)
   - TaylorSource/Base (2.0.0)
 
 DEPENDENCIES:
-  - Operations/+AddressBook (~> 2)
+  - Operations/+AddressBook
+  - Operations/+Photos
   - PureLayout
   - SwiftyBeaver
   - TaylorSource (~> 2)
 
 SPEC CHECKSUMS:
-  Operations: 62f6d7942ed37d06476426fb275233b21a48617c
+  Operations: 11f0188d894e441fa16f87264e771c88b3829826
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  SwiftyBeaver: 3eced9aabe4f10b975453cc1baaa2d523a5eaeae
+  SwiftyBeaver: 3a2481e7c24e8ef75252ec9eeebf1f456ac2d2f7
   TaylorSource: 86484ba9cf9374d51d4c17db1ad21ee5acba1277
 
 COCOAPODS: 0.39.0

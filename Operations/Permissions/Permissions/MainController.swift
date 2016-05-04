@@ -20,9 +20,10 @@ enum Demo: Int {
 
     case AddressBook
     case Location
+    case Photos
     case UserNotificationSettings // This is a work in progress, so not included yet.
 
-    static let all: [Demo] = [ .AddressBook, .Location ]
+    static let all: [Demo] = [ .AddressBook, .Location, .Photos ]
 
     var info: Info {
         switch self {
@@ -38,7 +39,13 @@ enum Demo: Int {
                 title: "Location",
                 subtitle: "Get the user's current location. Use LocationCondition to test whether the user has granted permissions."
             )
-            
+
+        case .Photos:
+            return Info(
+                title: "Photos",
+                subtitle: "Access the user's photo library."
+            )
+
         case .UserNotificationSettings:
             return Info(
                 title: "User Notification Settings",
@@ -110,38 +117,36 @@ extension MainController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let demo = provider.datasource.itemAtIndexPath(indexPath) {
-            var show: BlockOperation? = .None
-            
-            switch demo {
-            case .Location:
-                let viewController = LocationViewController()
-                show = BlockOperation {
-                    self.navigationController?.pushViewController(viewController, animated: true)
-                }
 
-            case .AddressBook:
-                let viewController = AddressBookViewController()
-                show = BlockOperation {
-                    self.navigationController?.pushViewController(viewController, animated: true)
+            let viewController: UIViewController = {
+
+                switch demo {
+                case .Location:
+                    return LocationViewController()
+
+                case .AddressBook:
+                    return AddressBookViewController()
+
+                case .Photos:
+                    return PhotosViewController()
+
+                case .UserNotificationSettings:
+                    return UserNotificationSettingsViewController()
                 }
-                
-            case .UserNotificationSettings:
-                let viewController = UserNotificationSettingsViewController()
-                show = BlockOperation {
-                    self.navigationController?.pushViewController(viewController, animated: true)
+            }()
+
+            let show = BlockOperation {
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+
+            show.addCondition(MutuallyExclusive<UIViewController>())
+            show.addObserver(BlockObserver { _, errors in
+                dispatch_async(Queue.Main.queue) {
+                    tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 }
-            }
-            
-            if let show = show {
-                show.addCondition(MutuallyExclusive<UIViewController>())
-                show.addObserver(BlockObserver { (_, errors) in
-                    dispatch_async(Queue.Main.queue) {
-                        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-                    }
-                })
-                
-                queue.addOperation(show)
-            }
+            })
+
+            queue.addOperation(show)
         }
     }
 }

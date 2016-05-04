@@ -6,4 +6,5 @@ use_frameworks!
 pod 'SwiftyBeaver'
 pod 'PureLayout'
 pod 'TaylorSource', '~> 2'
-pod 'Operations/+AddressBook', '~> 2'
+pod 'Operations/+AddressBook'
+pod 'Operations/+Photos'
