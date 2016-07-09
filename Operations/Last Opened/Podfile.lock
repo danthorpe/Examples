@@ -1,16 +1,14 @@
 PODS:
-  - Operations (2.6.0):
-    - Operations/Standard (= 2.6.0)
-  - Operations/Standard (2.6.0)
+  - Operations/+CloudKit (3.0.0):
+    - Operations/Standard
+  - Operations/Standard (3.0.0)
 
 DEPENDENCIES:
-  - Operations (from `../../`)
-
-EXTERNAL SOURCES:
-  Operations:
-    :path: "../../"
+  - Operations/+CloudKit
 
 SPEC CHECKSUMS:
-  Operations: 18114beb1805651d218ab077f549aea92e757493
+  Operations: c05cc4b2ad060201ab98cbacd5217876658b5f2c
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: de3464a386d6adb3976b0e2e410b84cd7a811c13
+
+COCOAPODS: 1.0.1
