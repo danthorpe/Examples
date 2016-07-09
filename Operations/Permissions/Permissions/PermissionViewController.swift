@@ -199,7 +199,7 @@ class PermissionViewController: UIViewController {
     
     // MARK: Update UI
 
-    func configureConditionsForState<Condition: OperationCondition>(state: State, silent: Bool = true) -> (Condition) -> [OperationCondition] {
+    func configureConditionsForState<C: Condition>(state: State, silent: Bool = true) -> (C) -> [Condition] {
         return { condition in
             switch (silent, state) {
             case (true, .Unknown):
@@ -216,7 +216,7 @@ class PermissionViewController: UIViewController {
         }
     }
 
-    func conditionsForState(state: State, silent: Bool = true) -> [OperationCondition] {
+    func conditionsForState(state: State, silent: Bool = true) -> [Condition] {
         // Subclasses should override and call this...
         // return configureConditionsForState(state, silent: silent)(BlockCondition { true })
         fatalError("Requires subclassing otherwise view controller will be left hanging.")

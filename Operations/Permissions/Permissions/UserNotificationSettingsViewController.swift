@@ -56,7 +56,7 @@ class UserNotificationSettingsViewController: PermissionViewController {
         determineAuthorizationStatus()
     }
 
-    override func conditionsForState(state: State, silent: Bool) -> [OperationCondition] {
+    override func conditionsForState(state: State, silent: Bool) -> [Condition] {
         return configureConditionsForState(state, silent: silent)(condition)
     }
 
